@@ -54,7 +54,6 @@ public class ScurityFileter implements Filter {
     private void toLogin(HttpServletResponse response, HttpServletRequest request, FilterChain filterChain) throws IOException, ServletException {
         StringBuilder sb = new StringBuilder(authPath).append("?redirect=").append(request.getRequestURL());
         response.sendRedirect(sb.toString());
-
     }
 
     public void destroy() {

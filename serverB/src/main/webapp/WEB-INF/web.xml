@@ -18,7 +18,7 @@
         <filter-class>com.yeqy.sso.filter.ScurityFileter</filter-class>
         <init-param>
             <param-name>authPath</param-name>
-            <param-value>http://localhost:8080</param-value>
+            <param-value>http://localhost:8080/login</param-value>
         </init-param>
     </filter>
 
