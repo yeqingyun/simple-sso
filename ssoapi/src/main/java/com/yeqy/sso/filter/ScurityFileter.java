@@ -36,14 +36,14 @@ public class ScurityFileter implements Filter {
                         request.getSession().setAttribute("user", userInfo);
                         filterChain.doFilter(request, response);
                     } else {//token无效
-                        toLogin(response, request, filterChain);
+                        toLogin(response, request);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    toLogin(response, request, filterChain);
+                    toLogin(response, request);
                 }
             } else {//没登录
-                toLogin(response, request, filterChain);
+                toLogin(response, request);
             }
         }
 
@@ -51,7 +51,7 @@ public class ScurityFileter implements Filter {
     }
 
 
-    private void toLogin(HttpServletResponse response, HttpServletRequest request, FilterChain filterChain) throws IOException, ServletException {
+    private void toLogin(HttpServletResponse response, HttpServletRequest request) throws IOException, ServletException {
         StringBuilder sb = new StringBuilder(authPath).append("?redirect=").append(request.getRequestURL());
         response.sendRedirect(sb.toString());
     }
