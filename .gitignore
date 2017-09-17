@@ -1,0 +1,6 @@
+*.iml
+*.class
+/serverA/target/
+/serverB/target/
+/ssoapi/target/
+/yeqysso/target/
