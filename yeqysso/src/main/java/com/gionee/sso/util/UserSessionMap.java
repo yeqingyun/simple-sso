@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class UserSessionMap {
 
-    private static Map<String,User> userMap = new CurrentHashMap<String, User>();
+    private static Map<String,User> userMap = new ConcurrentHashMap<String, User>();
 
 
     public static User getUser(String key){
